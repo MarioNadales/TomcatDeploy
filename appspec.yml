@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /tmp
+  - source: /tmp/app
+    destination: /opt/tomcat/webapps
 hooks:
   ApplicationStop:
     - location: codedeploy-scripts/stop.sh
