@@ -1,17 +1,13 @@
-# #!/bin/bash
+#!/bin/bash
 
-#     cd /tmp/app
+
+
+    # cd a la carpeta que descargamos del github
+    cd  /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
     
-#     # Construir la aplicación con Gradle
-#     bash gradlew build
+    # Permisos de ejecucion al archivo gradlew
+    chmod +x /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/gradlew
 
-#     # gradle build
-
-#     war_file=$(ls /tmp/app/build/libs/holamundo-0.0.1-SNAPSHOT-plain.war)
-
-#     # Copiar el archivo WAR generado a la carpeta de despliegue de Tomcat
-#     sudo mv $war_file /opt/tomcat/webapps/
-
-#     # Cambiar el propietario y los permisos del archivo WAR
-#     sudo chown tomcat:tomcat /opt/tomcat/webapps/$(basename $war_file)
-#     sudo chmod 644 /opt/tomcat/webapps/$(basename $war_file)  
+    
+    # Ejecutamos el build
+    bash gradlew build
