@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
     # cd a la carpeta que descargamos del github
     cd  /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
     
